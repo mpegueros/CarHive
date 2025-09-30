@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/view_image" >
+
+    <!-- ViewPager to display images or videos, allowing swipe navigation -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top bar containing a close button -->
+    <LinearLayout
+        style="@style/bar_top_close_media"
+        android:id="@+id/topBar">
+
+        <!-- Close button for exiting the view -->
+        <ImageView
+            style="@style/btn_white_medium"
+            android:id="@+id/closeButton"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_exit"
+            app:tint="@color/white"/>
+    </LinearLayout>
+
+</FrameLayout>

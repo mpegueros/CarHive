@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <!-- Horizontal container for profile image and basic information -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/white">
+
+        <!-- Container for image and text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Circular profile image -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/userImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/user_image_desc"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            <!-- Container for text -->
+            <LinearLayout
+                android:id="@+id/basic_info_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- User's first and last name -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/firstNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/first_name"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/lastNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/last_name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/BanText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/Ban"
+                    android:textColor="@color/gray" />
+
+                <!-- User's email address -->
+                <TextView
+                    android:id="@+id/emailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/email"
+                    android:textColor="@color/gray" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Expandable container for additional information -->
+    <LinearLayout
+        android:id="@+id/info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <!-- Container with rounded background to show more user details -->
+        <LinearLayout
+            android:id="@+id/expanded_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corner_background_gray"
+            android:visibility="gone">
+
+            <!-- CURP information for the user -->
+            <TextView
+                android:id="@+id/curpText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/curp"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <!-- Verification status (e.g., Verified/Unverified) -->
+            <TextView
+                android:id="@+id/verifiedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verified"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verified"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <!-- User role within the system (e.g., Admin, User) -->
+            <TextView
+                android:id="@+id/rolText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/role"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Horizontal buttons for unban and ban actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Unban button -->
+                <Button
+                    android:id="@+id/Userdesbaner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/unban_button"
+                    android:fontFamily="@font/inter_semibold"
+                    android:background="@drawable/rounded_btn"/>
+
+                <!-- Ban button -->
+                <Button
+                    android:id="@+id/Userbaner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ban_button"
+                    android:background="@drawable/rounded_btn"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/red"/>
+            </LinearLayout>
+
+            <!-- Delete button below the ban/unban buttons -->
+            <Button
+                android:id="@+id/UserDeleted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_button"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_btn"
+                android:fontFamily="@font/inter_semibold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

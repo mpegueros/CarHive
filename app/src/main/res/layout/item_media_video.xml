@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- VideoView for displaying the video -->
+    <VideoView
+        android:id="@+id/videoViewFull"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <!-- Overlay view to detect clicks and toggle the visibility of the top bar -->
+    <View
+        style="@style/view_video"
+        android:id="@+id/clickOverlay" />
+
+    <!-- Video controls including progress bar and time indicators -->
+    <LinearLayout
+        style="@style/controls_manipulation_media"
+        android:id="@+id/videoControls" >
+
+        <!-- SeekBar for video progress -->
+        <SeekBar
+            style="@style/bar_progress"
+            android:id="@+id/seekBar" />
+
+        <!-- Time indicators (current and total time) -->
+        <LinearLayout
+            style="@style/time_video_bar" >
+
+            <!-- Current playback time -->
+            <TextView
+                style="@style/time_Video"
+                android:id="@+id/currentTime" />
+
+            <!-- Divider or separator between times (optional) -->
+            <TextView
+                style="@style/button_dialog" />
+
+            <!-- Total video duration -->
+            <TextView
+                style="@style/time_Video"
+                android:id="@+id/totalTime" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Play/Pause button -->
+    <ImageView
+        style="@style/btn_play"
+        android:id="@+id/playPauseButton"
+        app:tint="@color/white" />
+
+</FrameLayout>

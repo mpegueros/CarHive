@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:elevation="10dp"
+    android:padding="30dp">
+
+    <!-- Progress bar -->
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:progressDrawable="@drawable/horizontal_progress"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:indeterminate="false"
+        android:progress="50" />
+
+    <!-- Action description -->
+    <TextView
+        style="@style/tw_section_dialog"
+        android:id="@+id/fileSendingText"
+        android:text="@string/uploading"
+        android:textColor="@color/blue"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_semibold"
+/>
+</LinearLayout>

@@ -1,0 +1,589 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Main container with ScrollView and navigation options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <!-- Navegation options LinearLayout -->
+        <LinearLayout
+            android:id="@+id/linear_nav_options"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/nav_options_background"
+            tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/nav_option_brands"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brands"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/condition"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_mileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mileage"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/color"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/year"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_transmission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transmission"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_fuelType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fuel_type"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/nav_option_engineCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/engine_capacity"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Apply and Restore Filters buttons -->
+            <Button
+                android:id="@+id/btn_apply_filters"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/apply_filters"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_more_info_background"/>
+
+            <Button
+                android:id="@+id/btn_restore_filters"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/clear_filters"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_more_info_background"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <!-- Filter sections ScrollView -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="16dp"
+            tools:ignore="NestedWeights">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Brand selection -->
+                <LinearLayout
+                    android:id="@+id/section_brands"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_a_brand"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoComplete_brand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/search_brand"
+                        android:inputType="text"
+                        android:paddingBottom="8dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_brands"
+                        android:layout_width="match_parent"
+                        android:layout_height="273dp"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/section_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_condition_filter"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <Spinner
+                        android:id="@+id/spinner_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/condition_options"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+
+                <!-- Price range selection -->
+                <LinearLayout
+                    android:id="@+id/section_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price_range"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <EditText
+                        android:id="@+id/editText_min_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:hint="@string/minimum_price"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/editText_max_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:hint="@string/maximum_price"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <!-- Mileage range selection -->
+                <LinearLayout
+                    android:id="@+id/section_mileage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mileage_range"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <EditText
+                        android:id="@+id/editText_min_mileage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:hint="@string/minimum_mileage"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/editText_max_mileage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:hint="@string/maximum_mileage"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <!-- Color selection -->
+                <LinearLayout
+                    android:id="@+id/section_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_color"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+                    <!-- Color Grid -->
+                    <GridLayout
+                        android:id="@+id/color_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+                        <!-- Color Buttons -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/red_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/red"
+                                android:tag="Red"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/orange_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/orange"
+                                android:tag="Orange"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/yellow_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/yellow"
+                                android:tag="Yellow"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/green_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/green"
+                                android:tag="Green"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/blue_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/blue"
+                                android:tag="Blue"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/purple_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/purple"
+                                android:tag="Purple"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/pink_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/pink"
+                                android:tag="Pink"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/white_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/gray_bg"
+                                android:tag="White"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/gray_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/gray"
+                                android:tag="Gray"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_margin="10dp">
+                            <Button
+                                android:id="@+id/black_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/black"
+                                android:tag="Black"/>
+
+                            <Button
+                                android:id="@+id/brown_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selected_circle"
+                                android:backgroundTint="@color/brown"
+                                android:tag="Brown"/>
+
+                        </FrameLayout>
+                    </GridLayout>
+                </LinearLayout>
+
+                <!-- Year range selection -->
+                <LinearLayout
+                    android:id="@+id/section_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_year"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/start_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/start_year"
+                        android:inputType="number"
+                        android:paddingBottom="16dp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/end_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/end_year"
+                        android:inputType="number"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/section_transmision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_transmision"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <Spinner
+                        android:id="@+id/spinner_transmision"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/transmision_options"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/section_fuelType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_fuelType"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <Spinner
+                        android:id="@+id/spinner_fuelType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/fuel_type_options_filter"
+                        android:paddingBottom="16dp" />
+                </LinearLayout>
+
+                <!-- ...otros elementos de filtro... -->
+
+                <LinearLayout
+                    android:id="@+id/section_engineCapacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/engine_capacity"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/blue" />
+
+                    <EditText
+                        android:id="@+id/editText_min_engineCapacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/min_engine_capacity"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="16dp" />
+
+                    <EditText
+                        android:id="@+id/editText_max_engineCapacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/max_engine_capacity"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="16dp" />
+            </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@drawable/bottom_shadow" />
+
+    <!-- Cancel button -->
+    <Button
+        android:id="@+id/cancel_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_more_info_background"
+        android:layout_margin="8dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

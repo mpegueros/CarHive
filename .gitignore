@@ -1,0 +1,26 @@
+*.iml
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Ignore .gradle folder
+.gradle/
+
+# Ignore local.properties file
+local.properties
+
+# Ignore build folders
+**/build/
+
+# Ignore google-sevices
+/app/google-services.json
+
+# Ignore the entire .idea folder
+.idea/
+
+# Allow code styles and inspection profiles
+!.idea/codeStyles/
+!.idea/inspectionProfiles/

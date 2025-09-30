@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_margin="16dp"
+    android:padding="16dp"
+    android:elevation="8dp">
+
+    <!-- Principal content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:backgroundTint="@android:color/transparent">
+
+        <!-- Message dialog -->
+        <TextView
+            style="@style/tw_section_dialog"
+            android:id="@+id/tvConfirmMessage"
+            android:text="@string/deletion_confirmation_message"
+            android:gravity="center" />
+
+        <!-- Buttons content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <!-- Confirm Delete Button -->
+            <Button
+                style="@style/button_dialog"
+                android:id="@+id/btnConfirm"
+                android:text="@string/confirm"
+                android:textColor="@drawable/btn_txt_color"
+                android:background="@drawable/btn_confirm_delete" />
+
+            <!-- Cancel Button -->
+            <Button
+                style="@style/button_dialog"
+                android:id="@+id/btnCancel"
+                android:text="@string/deny"
+                android:textColor="@drawable/btn_edit_txt_color"
+                android:background="@drawable/btn_close_delete" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

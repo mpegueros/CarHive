@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue"
+    tools:context=".presentation.initial.Register.view.SecondRegisterFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvImagen"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/blue"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <!-- Link to go back -->
+        <TextView
+            android:id="@+id/goBackLink"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_gravity="start"
+            android:clickable="true"
+            android:focusable="true"
+            app:drawableStartCompat="@drawable/ic_arrow_back"
+            app:drawableTint="@color/white" />
+
+        <!-- Register image -->
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_register2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Personal information form -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintTop_toBottomOf="@+id/cvImagen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardPreventCornerOverlap="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="6"
+            android:background="@drawable/rounded_top_cornes"
+            android:padding="24dp"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_rgt_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/personal_information"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp" />
+
+            <!-- Instruction -->
+            <TextView
+                android:id="@+id/instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/please_enter_your_information_for_continue"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <!-- Input field for CURP -->
+            <EditText
+                android:id="@+id/curpEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="username"
+                android:hint="@string/curp"
+                android:maxLength="18"
+                android:inputType="textCapCharacters"
+                android:drawableStart="@drawable/ic_person"
+                style="@style/EditTextStyle"/>
+
+            <!-- Input field for phone number -->
+            <EditText
+                android:id="@+id/phoneNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="phone"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:drawableStart="@drawable/ic_phone"
+                style="@style/EditTextStyle"/>
+
+
+            <!-- Input field for voter ID -->
+            <EditText
+                android:id="@+id/voterIDEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="username"
+                android:hint="@string/voter_id"
+                android:maxLength="18"
+                android:inputType="textCapCharacters"
+                android:drawableStart="@drawable/ic_person"
+                style="@style/EditTextStyle"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@+id/ivIsVerified"
+                android:orientation="horizontal">
+                <!-- Terms and conditions checkbox -->
+                <CheckBox
+                    android:id="@+id/cbTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/i_accept_the"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/dark_blue"
+                    android:gravity="end|center_vertical"
+                    android:buttonTint="@color/checkbox_color_selector"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/terms_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/terms_and_conditions"
+                    android:textColor="@color/blue" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/tv_rgt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/inter_extrabold"
+                    android:text="@string/next"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="20sp" />
+                <!-- Button for going to the next screen -->
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_arrow_next"
+                    android:backgroundTint="@color/blue" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

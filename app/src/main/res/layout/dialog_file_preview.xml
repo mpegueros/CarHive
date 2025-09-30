@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Vista previa de la imagen -->
+    <ImageView
+        style="@style/preview_image_dialog"
+        android:id="@+id/previewImageView" />
+
+    <!-- Vista previa del video -->
+    <VideoView
+        style="@style/preview_video_dialog"
+        android:id="@+id/previewVideoView" />
+
+    <!-- Nombre del archivo para otros tipos de archivos (PDF, DOC, etc.) -->
+    <TextView
+        style="@style/name_file_content_dialog_preview"
+        android:id="@+id/previewFileName"
+        android:text="@string/file_name" />
+
+</LinearLayout>

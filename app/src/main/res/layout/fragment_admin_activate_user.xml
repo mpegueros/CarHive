@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.admin.view.AdminUserActiveFragment">
+
+    <Button
+        android:id="@+id/bureturn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/ic_arrow_back"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verified_users_report"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@id/bureturn"
+        android:layout_alignBaseline="@id/bureturn"
+        android:layout_marginStart="70dp"/>
+
+    <Button
+        android:id="@+id/btToggleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_to_monthly_view"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chartUsuariosActivos"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="160dp" />
+
+</FrameLayout>

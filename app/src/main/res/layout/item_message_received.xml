@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="16dp"
+    android:paddingHorizontal="5dp">
+
+    <!-- Header for the message date -->
+    <LinearLayout
+        style="@style/content_date"
+        android:id="@+id/llHead" >
+
+        <!-- Date header text -->
+        <TextView
+            style="@style/header_date"
+            android:id="@+id/dateHeader" />
+    </LinearLayout>
+
+    <!-- Container for messages and files -->
+    <LinearLayout
+        style="@style/content_message_file"
+        android:layout_below="@id/llHead"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp">
+
+        <!-- Text message content -->
+        <TextView
+            style="@style/message_text"
+            android:id="@+id/messageText"
+            android:background="@drawable/content_text_message_received"
+            android:textColor="@color/blue"/>
+
+        <!-- File container with a design similar to WhatsApp -->
+        <LinearLayout
+            style="@style/message_file"
+            android:id="@+id/fileContainer"
+            android:background="@drawable/content_text_message_received" >
+
+            <LinearLayout
+                style="@style/content_message_video_image">
+
+                <!-- File name -->
+                <TextView
+                    style="@style/style_file_name"
+                    android:id="@+id/fileName"
+                    android:text="@string/example_file_data"
+                    android:textColor="@color/blue"/>
+
+                <!-- Additional file information (size and type) -->
+                <TextView
+                    style="@style/style_file_info"
+                    android:id="@+id/fileInfo"
+                    android:text="@string/data_file"
+                    android:textColor="@color/black_opacity_light"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Image view for displaying photos -->
+        <ImageView
+            style="@style/message_image"
+            android:id="@+id/fileImageView"
+            android:background="@drawable/bg_content_image_message_sent"
+            android:contentDescription="@null" />
+
+        <!-- Video view for displaying videos -->
+        <VideoView
+            style="@style/message_video"
+            android:id="@+id/videoView"
+            android:background="@drawable/bg_content_image_message_sent" />
+
+        <!-- Retry button for failed downloads -->
+        <Button
+            style="@style/btn_function_chat"
+            android:id="@+id/retryButton"
+            android:text="@string/try_again"
+            android:contentDescription="@string/description_download_err"
+            android:drawableStart="@drawable/ic_error_connection"
+            android:backgroundTint="@color/red_lighting"
+            android:textColor="@color/red_dark" />
+
+        <!-- Container for message time and status -->
+        <LinearLayout
+            style="@style/structure_status"
+            android:layout_gravity="start">
+
+            <!-- Message status icon -->
+            <ImageView
+                style="@style/status_message"
+                android:id="@+id/statusIcon"
+                android:layout_marginEnd="4dp" />
+
+            <!-- Message time -->
+            <TextView
+                style="@style/txt_small"
+                android:id="@+id/messageTime" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,555 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.carhive.presentation.initial.Login.view.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_recoveryPasswordFragment"
+            app:destination="@id/recoveryPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_firstRegisterFragment"
+            app:destination="@id/firstRegisterFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_sellerFragment"
+            app:destination="@id/sellerHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userhomeFragment"
+            app:destination="@id/userHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_verifyEmailFragment"
+            app:destination="@id/fortRegisterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoveryPasswordFragment"
+        android:name="com.example.carhive.presentation.initial.Login.view.RecoveryPasswordFragment"
+        tools:layout="@layout/fragment_recovery_password">
+        <action
+            android:id="@+id/action_recoveryPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstRegisterFragment"
+        android:name="com.example.carhive.presentation.initial.Register.view.FirstRegisterFragment"
+        tools:layout="@layout/fragment_register_first">
+        <action
+            android:id="@+id/action_firstRegisterFragment_to_secondRegisterFragment"
+            app:destination="@id/secondRegisterFragment" />
+        <action
+            android:id="@+id/action_firstRegisterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondRegisterFragment"
+        android:name="com.example.carhive.presentation.initial.Register.view.SecondRegisterFragment"
+        tools:layout="@layout/fragment_register_second">
+        <action
+            android:id="@+id/action_secondRegisterFragment_to_thirdRegisterFragment"
+            app:destination="@id/thirdRegisterFragment" />
+        <action
+            android:id="@+id/action_secondRegisterFragment_to_firstRegisterFragment"
+            app:destination="@id/firstRegisterFragment" />
+        <action
+            android:id="@+id/action_secondRegisterFragment_to_termsUserFragment"
+            app:destination="@id/termsUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thirdRegisterFragment"
+        android:name="com.example.carhive.presentation.initial.Register.view.ThirdRegisterFragment"
+        tools:layout="@layout/fragment_register_third">
+        <action
+            android:id="@+id/action_thirdRegisterFragment_to_fortRegisterFragment"
+            app:destination="@id/fortRegisterFragment" />
+        <action
+            android:id="@+id/action_thirdRegisterFragment_to_secondRegisterFragment"
+            app:destination="@id/secondRegisterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fortRegisterFragment"
+        android:name="com.example.carhive.presentation.initial.Register.view.FortRegisterFragment"
+        tools:layout="@layout/fragment_register_fourth">
+        <action
+            android:id="@+id/action_fortRegisterFragment_to_fiveRegisterFragment"
+            app:destination="@id/fiveRegisterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fiveRegisterFragment"
+        android:name="com.example.carhive.presentation.initial.Register.view.FiveRegisterFragment"
+        tools:layout="@layout/fragment_register_five">
+        <action
+            android:id="@+id/action_fiveRegisterFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+    </fragment>
+
+    <!-- Fragments de Usuario -->
+
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="com.example.carhive.presentation.user.view.UserHomeFragment"
+        tools:layout="@layout/fragment_user_home">
+        <action
+            android:id="@+id/action_userHomeFragment_to_carDetailFragment"
+            app:destination="@id/userHomeCarDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsUserFragment"
+        android:name="com.example.carhive.presentation.user.items.TermsUserFragment"
+        tools:layout="@layout/fragment_user_profile_terms">
+        <action
+            android:id="@+id/action_userProfileFragment_to_sellerProfileFragment"
+            app:destination="@id/userProfileFragment"/>
+        <action
+            android:id="@+id/action_termsUserFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.example.carhive.Presentation.user.items.PrivacyPolicyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_user_profile_privacy_policy">
+
+        <action
+            android:id="@+id/action_privacyPolicyFragment_to_serProfileFragment"
+            app:destination="@id/userProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.carhive.presentation.user.view.FavoritesFragment"
+        tools:layout="@layout/fragment_user_favorites">
+        <action
+            android:id="@+id/action_userHomeFragment_to_carDetailFragment"
+            app:destination="@id/userHomeCarDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userHomeCarDetailFragment"
+        android:name="com.example.carhive.presentation.user.view.CarDetailFragment"
+        tools:layout="@layout/fragment_user_home_cardetails">
+        <action
+            android:id="@+id/action_userHomeFragment_to_carDetailFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_chat"
+            app:destination="@id/userChat" />
+        <action
+            android:id="@+id/action_carDetailFragment_to_SellerProfileFragmentCars"
+            app:destination="@id/sellerProfileFragmentCars" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerProfileFragmentCars"
+        android:name="com.example.carhive.presentation.user.view.SellerProfileFragmentCars"
+        tools:layout="@layout/fragment_seller_profile_cars">
+        <argument
+            android:name="sellerId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_SellerProfileFragmentCars_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+        <action
+            android:id="@+id/action_SellerProfileFragmentCars_to_carDetailFragment"
+            app:destination="@id/userHomeCarDetailFragment" />
+        <action
+            android:id="@+id/action_SellerProfileFragmentCars_to_UserSellerProfileCommentsFragment"
+            app:destination="@id/UserSellerProfileCommentsFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserSellerProfileCommentsFragment"
+        android:name="com.example.carhive.presentation.user.view.UserSellerProfileCommentsFragment"
+        tools:layout="@layout/fragment_seller_profile_comments">
+        <argument
+            android:name="sellerId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_UserSellerProfileCommentsFragment_to_SellerProfileFragmentCars"
+            app:destination="@id/sellerProfileFragmentCars" />
+        <action
+            android:id="@+id/action_UserSellerProfileFragmentCars_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userMessages"
+        android:name="com.example.carhive.presentation.user.view.UserMessagesFragment"
+        tools:layout="@layout/fragment_interested_users">
+        <action
+            android:id="@+id/action_userMessagesFragment_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userChat"
+        android:name="com.example.carhive.presentation.chat.view.ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragmentt_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.carhive.presentation.user.view.ProfileFragment"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_profileSellerFragment"
+            app:destination="@id/userProfileSellerFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_termsFragment"
+            app:destination="@id/termsUserFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+
+        <action
+            android:id="@+id/action_userProfileFragment_to_UserReportMessagesFragment"
+            app:destination="@id/userReportChat" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_PersonalDataFragment"
+            app:destination="@id/PersonalDataFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_CommentHistoryFragment"
+            app:destination="@id/UserCommentHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserCommentHistoryFragment"
+        android:name="com.example.carhive.presentation.user.view.UserCommentHistoryFragment"
+        tools:layout="@layout/fragment_user_comment_history">
+
+        <action
+            android:id="@+id/action_UserCommentHistoryFragment_to_sellerProfileFragmentCars"
+            app:destination="@id/sellerProfileFragmentCars" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PersonalDataFragment"
+        android:name="com.example.carhive.presentation.user.view.AdditionalDataFragment"
+        tools:layout="@layout/fragment_additional_data">
+        <action
+            android:id="@+id/action_PersonalDataFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"/>
+        <action
+            android:id="@+id/action_PersonalDataFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userReportChat"
+        android:name="com.example.carhive.presentation.user.view.UserReportMessagesFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragmentt_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userProfileSellerFragment"
+        android:name="com.example.carhive.presentation.user.view.ProfileSellerFragment"
+        tools:layout="@layout/fragment_user_profile_seller">
+        <action
+            android:id="@+id/action_userProfileFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_sellerHomeFragment"
+            app:destination="@id/sellerHomeFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_termsSellerFragment"
+            app:destination="@id/termsSellerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerHomeFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerHomeFragment"
+        tools:layout="@layout/fragment_seller_home">
+
+        <action
+            android:id="@+id/action_sellerHomeFragment_to_CommentHistoryFragment"
+            app:destination="@id/SellerCommentHistoryFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerUsersChatsFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerCarUsersFragment"
+        tools:layout="@layout/fragment_seller_users_chats">
+        <action
+            android:id="@+id/action_carUsersFragment_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerInterestedUsersFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerInterestedUsersFragment"
+        tools:layout="@layout/fragment_interested_users">
+        <action
+            android:id="@+id/action_interestedUsersFragment_to_chatFragment"
+            app:destination="@id/userChat"/>
+        <action
+            android:id="@+id/action_interestedUsersFragment_to_interestedUsersFragment"
+            app:destination="@id/sellerUsersChatsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerCrudFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerCrudFragment"
+        tools:layout="@layout/fragment_seller_crud">
+
+    </fragment>
+    <!--  Fragmento para el perfil del vendedor  -->
+    <fragment
+        android:id="@+id/sellerProfileFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerProfileFragment"
+        tools:layout="@layout/fragment_seller_profile">
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"/>
+        <action
+            android:id="@+id/action_userProfileFragment_to_sellerHomeFragment"
+            app:destination="@id/sellerHomeFragment"/>
+        <action
+            android:id="@+id/action_userProfileFragment_to_termsSellerFragment"
+            app:destination="@id/termsSellerFragment"/>
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_sellerPrivacyPolicyFragment"
+            app:destination="@id/sellerPrivacyPolicyFragment" />
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_sellerReportChat"
+            app:destination="@id/sellerReportChat"/>
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_PersonalDataFragment"
+            app:destination="@id/PersonalDataFragment" />
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_CommentHistoryFragment"
+            app:destination="@id/SellerCommentHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SellerCommentHistoryFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerCommentHistoryFragment"
+        tools:layout="@layout/fragment_seller_comment_history">
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerReportChat"
+        android:name="com.example.carhive.presentation.seller.view.SellerReportMessagesFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragmentt_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsSellerFragment"
+        android:name="com.example.carhive.presentation.user.items.TermsSellerFragment"
+        tools:layout="@layout/fragment_seller_profile_terms">
+        <action
+            android:id="@+id/action_termsSellerFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
+        <action
+            android:id="@+id/action_termsSellerFragment_to_sellerPrivacyPolicyFragment"
+            app:destination="@id/sellerPrivacyPolicyFragment" />
+        <action
+            android:id="@+id/action_termsSellerFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/sellerPrivacyPolicyFragment"
+        android:name="com.example.carhive.Presentation.user.items.SellerPrivacyPolicyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_seller_profile_privacy_policy">
+
+        <action
+            android:id="@+id/action_sellerPrivacyPolicyFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sellerFavoriteFragment"
+        android:name="com.example.carhive.presentation.seller.view.SellerFavoritesFragment"
+        tools:layout="@layout/fragment_seller_favorites">
+
+    </fragment>
+    <fragment
+        android:id="@+id/approvedCarsFragment"
+        android:name="com.example.carhive.presentation.seller.view.ApprovedCarsFragment"
+        android:label="Approved Cars">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminHomeFragment"
+        tools:layout="@layout/fragment_admin_home">
+        <action
+            android:id="@+id/action_userFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminUserListFragment"
+            app:destination="@id/adminUserListFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminUserBanFragment"
+            app:destination="@id/adminUserBanFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminUserActiveFragment"
+            app:destination="@id/adminUserActiveFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminCarListFragment"
+            app:destination="@id/adminCarListFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminSupportFragment"
+            app:destination="@id/adminSupportFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminHistoryFragment"
+            app:destination="@id/adminHistoryFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminReportsFragment"
+            app:destination="@id/adminReportsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminReportsFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminReportsFragment"
+        tools:layout="@layout/fragment_admin_reports">
+        <action
+            android:id="@+id/action_adminReportsFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminHistoryFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminHistoryFragment"
+        tools:layout="@layout/fragment_admin_history">
+
+        <action
+            android:id="@+id/action_adminHistoryFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminCarListFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminCarListFragment"
+        tools:layout="@layout/fragment_car_list">
+
+        <action
+            android:id="@+id/action_adminCarListFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminUserActiveFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminUserActiveFragment"
+        tools:layout="@layout/fragment_admin_activate_user">
+        <action
+            android:id="@+id/action_adminUserActiveFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminUserListFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminUserListFragment"
+        android:label="User List">
+        <action
+            android:id="@+id/action_adminUserListFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminUserBanFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminUserBanFragment"
+        android:label="Banear Usuarios">
+        <action
+            android:id="@+id/action_adminUserBanFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/carsListFragment"
+        android:name="com.example.carhive.presentation.seller.view.CarsListFragment"
+        android:label="Cars List" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminSupportFragment"
+        android:name="com.example.carhive.presentation.admin.view.AdminSupportFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_adminSupportFragment_to_chatFragment"
+            app:destination="@id/userChat"/>
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.carhive.presentation.notifications.view.NotificationsFragment">
+        <action
+            android:id="@+id/action_notificationsFragment_to_profile"
+            app:destination="@id/userProfileFragment" />
+
+        <action
+            android:id="@+id/action_notificationsFragment_to_favorites"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_chats"
+            app:destination="@id/userMessages" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_defaultFragment"
+            app:destination="@id/notificationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationsSellerFragment"
+        android:name="com.example.carhive.presentation.notifications.view.NotificationsSellerFragment">
+        <action
+            android:id="@+id/action_notificationsSellerFragment_to_profile"
+            app:destination="@id/sellerProfileFragment" />
+        <action
+            android:id="@+id/action_notificationsSellerFragment_to_allCars"
+            app:destination="@id/carsListFragment" />
+        <action
+            android:id="@+id/action_notificationsSellerFragment_to_favorites"
+            app:destination="@id/sellerFavoriteFragment" />
+        <action
+            android:id="@+id/action_notificationsSellerFragment_to_chats"
+            app:destination="@id/sellerInterestedUsersFragment" />
+        <action
+            android:id="@+id/action_notificationsSellerFragment_to_defaultFragment"
+            app:destination="@id/notificationsSellerFragment" />
+    </fragment>
+
+</navigation>
